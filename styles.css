@@ -204,7 +204,24 @@ nav ul li a:hover, nav ul li a.active {
     bottom: 32px;
     z-index: 3;
 }
-
+.hero-cta-btn {
+    background: #006d6d;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 14px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background 0.2s;
+    display: inline-block;
+    margin-left: 600px;
+}
+.hero-cta-btn:hover {
+    background: #00bfe9;
+    color: #fff;
+}
 .info-card {
     position: absolute;
     right: 0px;
@@ -252,27 +269,25 @@ nav ul li a:hover, nav ul li a.active {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: none;
+    border-radius: 10px;
 }
 
-.info-card.image-only-card .explore-arrow {
+.clip-icon {
     position: absolute;
-    top: -15px;
-    right: -15px;
-    background: #223040;
-    color: #fff;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-    z-index: 2;
-    border: 6px solid #fff;
-    cursor: pointer;
+    top: -35px;
+    right: -30px;
+    color: #0c7183;
+    width: 130px;
+    height: 130px;
+    z-index: 5;
 }
+
+.clip-icon svg {
+    color: #fff;
+    width: 20px;
+    height: 20px;
+}
+
 .card-content {
     display: flex;
     flex-direction: column;
@@ -391,35 +406,48 @@ nav ul li a:hover, nav ul li a.active {
     }
 }
 
+.icon-row-container {
+    overflow: hidden;
+    margin: 80px 0 0 0;
+    background: #fff;
+}
+
 .icon-row {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    gap: 40px;
-    margin: 80px 0 0 0;
+    gap: 0;
     padding: 0 0 24px 0;
     background: #fff;
+    animation: scroll 15s linear infinite;
+    width: max-content;
 }
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 .icon-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     min-width: 120px;
+    margin: 0 30px;
 }
-.pwa {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #111;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    letter-spacing: 1px;
-}
+
 .disc-logo {
-    width: 54px;
-    height: 54px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
-    margin-bottom: 2px;
+    margin-bottom: 15px;
+    margin-top: 20px;
 }
 .disc-label {
     font-size: 0.85rem;
@@ -2335,24 +2363,7 @@ nav ul li a:hover, nav ul li a.active {
     margin-bottom: 12px;
     margin-left: 150px;
 }
-.contactus-cta-btn {
-    background: #006d6d;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 14px 32px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-decoration: none;
-    margin-top: 8px;
-    transition: background 0.2s;
-    display: inline-block;
-    margin-left: 150px;
-}
-.contactus-cta-btn:hover {
-    background: #00bfe9;
-    color: #fff;
-}
+
 @media (max-width: 900px) {
     .contactus-main-section {
         flex-direction: column;
