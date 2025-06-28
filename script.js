@@ -2,19 +2,23 @@
 const hamburger = document.querySelector('.hamburger');
 const navList = document.querySelector('nav ul');
 
-hamburger.addEventListener('click', () => {
-    navList.classList.toggle('open');
-});
+if (hamburger && navList) {
+    hamburger.addEventListener('click', () => {
+        navList.classList.toggle('open');
+    });
+}
 
 // (Optional) Carousel dot activation logic
 const dots = document.querySelectorAll('.dot');
-dots.forEach((dot, idx) => {
-    dot.addEventListener('click', () => {
-        dots.forEach(d => d.classList.remove('active'));
-        dot.classList.add('active');
-        // Add logic to change hero image/content if needed
+if (dots.length > 0) {
+    dots.forEach((dot, idx) => {
+        dot.addEventListener('click', () => {
+            dots.forEach(d => d.classList.remove('active'));
+            dot.classList.add('active');
+            // Add logic to change hero image/content if needed
+        });
     });
-}); 
+}
 
 // Pricing Plan Section
 
@@ -90,4 +94,85 @@ function initializeForm() {
 
 // Start the initialization process
 initializeForm();
+
+// Gallery Modal Popup Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Gallery modal script loaded');
+    
+    const modal = document.getElementById('gallery-modal');
+    const modalImage = document.getElementById('gallery-modal-image');
+    const modalCaption = document.getElementById('gallery-modal-caption');
+    const modalClose = document.getElementById('gallery-modal-close');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    console.log('Modal elements found:', {
+        modal: modal,
+        modalImage: modalImage,
+        modalCaption: modalCaption,
+        modalClose: modalClose,
+        galleryItemsCount: galleryItems.length
+    });
+
+    if (!modal || !modalImage || !modalCaption || !modalClose) {
+        console.error('Some modal elements not found');
+        return;
+    }
+
+    if (galleryItems.length === 0) {
+        console.error('No gallery items found');
+        return;
+    }
+
+    // Open modal when clicking on gallery item
+    galleryItems.forEach((item, index) => {
+        item.addEventListener('click', function(e) {
+            console.log('Gallery item clicked:', index);
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const imageSrc = this.getAttribute('data-image');
+            const caption = this.getAttribute('data-caption');
+            
+            console.log('Image data:', { imageSrc, caption });
+            
+            modalImage.src = imageSrc;
+            modalImage.alt = caption;
+            modalCaption.textContent = caption;
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+            
+            console.log('Modal should be visible now');
+        });
+    });
+
+    // Close modal when clicking close button
+    modalClose.addEventListener('click', function(e) {
+        console.log('Close button clicked');
+        e.preventDefault();
+        closeModal();
+    });
+
+    // Close modal when clicking outside the content
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            console.log('Modal background clicked');
+            closeModal();
+        }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            console.log('Escape key pressed');
+            closeModal();
+        }
+    });
+
+    function closeModal() {
+        console.log('Closing modal');
+        modal.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+});
 
