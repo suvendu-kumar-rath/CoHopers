@@ -534,8 +534,8 @@ nav ul li a:hover, nav ul li a.active {
     gap: 32px;
 }
 .value-card {
-    width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
     background:#000001c4;
     border: 2px solid #d6e6e6;
     border-radius: 18px;
