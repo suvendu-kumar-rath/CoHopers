@@ -32,7 +32,8 @@ header {
     height: 100%;
 }
 .logo img {
-    height: 70px;
+    margin-left: 10px;
+    height: 90px;
     width: auto;
     display: block;
     border-radius: 0 0 0 0;
