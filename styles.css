@@ -1091,7 +1091,7 @@ nav ul li a:hover, nav ul li a.active {
     }
 }
 .footer-section {
-    background: #b1b1b18b;
+    background: linear-gradient(to bottom, #181818 10%, #707070 100%);
     margin-top: 48px;
     padding: 32px 32px 0 32px;
     border-radius: 0 0 18px 18px;
@@ -1118,7 +1118,7 @@ nav ul li a:hover, nav ul li a.active {
     font-size: 2.2rem;
     font-weight: 500;
     margin-bottom: 12px;
-    color: #181818;
+    color: #fffdfd;
 }
 .footer-left-row {
     display: flex;
@@ -1142,7 +1142,7 @@ nav ul li a:hover, nav ul li a.active {
     font-size: 1rem;
 }
 .footer-nav li {
-    color: #222;
+    color: #f9f7f7;
     cursor: pointer;
     text-decoration: none;
     transition: none;
@@ -1152,7 +1152,7 @@ nav ul li a:hover, nav ul li a.active {
 }
 .footer-contact p {
     font-size: 0.98rem;
-    color: #222;
+    color: #f0eded;
     margin-bottom: 10px;
 }
 .footer-socials {
@@ -1187,6 +1187,9 @@ nav ul li a:hover, nav ul li a.active {
     border-radius: 18px;
     object-fit: cover;
     box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+}
+.text-white {
+    color: #fff;
 }
 .footer-bottom {
     display: flex;
