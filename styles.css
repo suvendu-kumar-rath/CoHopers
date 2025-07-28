@@ -122,7 +122,7 @@ nav ul li a:hover, nav ul li a.active {
 .hero-content {
     position: absolute;
     top: 50px;
-    left: 40px;
+    left: 20px;
     z-index: 2;
     color: #fff;
     text-align: left;
@@ -151,15 +151,15 @@ nav ul li a:hover, nav ul li a.active {
     font-weight: 600;
     color: #fff;
     text-shadow: 1px 1px 8px rgba(0,0,0,0.18);
-    margin-left: 200px;
+    margin-left: 150px;
 }
 .hero-text-2 {
     font-size: 6rem;
     font-weight: bold;
-    margin-left: 600px;
+    margin-left: 450px;
 }
 .hero-text-3 {
-    margin-left: 600px;
+    margin-left: 450px;
 }
 .carousel-dots {
     display: flex;
@@ -3074,11 +3074,29 @@ nav ul li a:hover, nav ul li a.active {
     }
 }
 
-.about-growth-img {
-    width: 100vw;
-    max-width: 100vw;
+.location-base {
+    width: 100%;
+    max-width: 100%;
     height: auto;
     display: block;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.location-base {
+    position: relative;
+    z-index: 1;
+}
+
+.location-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-76%, -97%);
+    width: 190px;
+    height: 120px;
     object-fit: cover;
-    margin-left: calc(-50vw + 50%);
+    z-index: 2;
+    opacity: 2;
+    border-radius: 10px;
 }
