@@ -109,8 +109,9 @@ nav ul li a:hover, nav ul li a.active {
 .hero {
     position: relative;
     width: 100vw;
-    min-height: 80vh;
-    background: url('images/back\ ground\ image.jpg') center center/cover no-repeat;
+    height: 100vh; /* Fixed height instead of min-height */
+    background: url('images/header.png') center center/cover no-repeat;
+    background-attachment: fixed; /* Parallax effect for better scaling */
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -121,8 +122,8 @@ nav ul li a:hover, nav ul li a.active {
 
 .hero-content {
     position: absolute;
-    top: 50px;
-    left: 20px;
+    top: 50vh; /* Using viewport height for better scaling */
+    left: 61px;
     z-index: 2;
     color: #fff;
     text-align: left;
@@ -140,7 +141,7 @@ nav ul li a:hover, nav ul li a.active {
 
 .hero-content p {
     font-size: 1.25rem;
-    margin-bottom: 32px;
+    /* margin-bottom: 105px; */
     text-shadow: 1px 1px 8px rgba(0,0,0,0.18);
     color: #f5f5f5;
     text-align: left;
@@ -148,18 +149,27 @@ nav ul li a:hover, nav ul li a.active {
 }
 .hero-text-1 {
     font-size: 5rem;
-    font-weight: 600;
-    color: #fff;
+    font-weight: 700;
+    background: linear-gradient(to right, #0046ff, #00bfe9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-shadow: 1px 1px 8px rgba(0,0,0,0.18);
     margin-left: 150px;
 }
 .hero-text-2 {
     font-size: 6rem;
     font-weight: bold;
+    background: linear-gradient(to right, #0046ff, #00bfe9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-left: 450px;
 }
 .hero-text-3 {
-    margin-left: 450px;
+    margin-left: 564px;
+    color: white;
+    font-size: 1.25rem;
+    max-width: 420px;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.5);
 }
 .carousel-dots {
     display: flex;
@@ -195,6 +205,9 @@ nav ul li a:hover, nav ul li a.active {
 .hero-o-container {
     position: relative;
     display: inline-block;
+    background: linear-gradient(to right, #0046ff, #00bfe9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .hero-o-below-img {
     display: block;
@@ -204,10 +217,20 @@ nav ul li a:hover, nav ul li a.active {
     transform: translateX(-50%);
     width: 3.0em;
     height: auto;
-    margin-top: -60px;
+    margin-top: -46px;
     z-index: 2;
     border-radius: none;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    /* box-shadow: 0 2px 12px rgba(0,0,0,0.10); */
+    animation: hanging 3s ease-in-out infinite;
+    transform-origin: top center;
+}
+
+@keyframes hanging {
+    0% { transform: translateX(-50%) rotate(0deg); }
+    25% { transform: translateX(-50%) rotate(3deg); }
+    50% { transform: translateX(-50%) rotate(0deg); }
+    75% { transform: translateX(-50%) rotate(-3deg); }
+    100% { transform: translateX(-50%) rotate(0deg); }
 }
 .dot {
     width: 14px;
@@ -238,7 +261,7 @@ nav ul li a:hover, nav ul li a.active {
     font-size: 1.1rem;
     font-weight: 600;
     text-decoration: none;
-    margin-top: 10px;
+    margin-top: 21px;
     transition: background 0.2s;
     display: inline-block;
     margin-left: 600px;
@@ -269,7 +292,7 @@ nav ul li a:hover, nav ul li a.active {
     display: none;
 }
 .info-card.image-only-card {
-    position: absolute;
+    position: absolute; /* Changed back to absolute */
     right: 30px;
     bottom: 0px;
     width: 320px;
@@ -389,7 +412,61 @@ nav ul li a:hover, nav ul li a.active {
         right: 10px;
         bottom: -28px;
     }
+    .info-card.image-only-card {
+        position: fixed;
+        right: 20px;
+        width: 280px;
+        height: 260px;
+    }
 }
+@media (max-width: 1200px) {
+    .hero {
+        height: 90vh;
+    }
+    .hero-content {
+        top: 40vh;
+    }
+    .hero-text-1 {
+        margin-left: 100px;
+        font-size: 4.5rem;
+    }
+    .hero-text-2 {
+        margin-left: 300px;
+        font-size: 5rem;
+    }
+    .hero-text-3 {
+        margin-left: 400px;
+    }
+    .hero-cta-btn {
+        margin-left: 400px;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero {
+        height: 80vh;
+        background-attachment: scroll; /* Better for tablets */
+    }
+    .hero-content {
+        top: 35vh;
+        left: 40px;
+    }
+    .hero-text-1 {
+        margin-left: 50px;
+        font-size: 4rem;
+    }
+    .hero-text-2 {
+        margin-left: 200px;
+        font-size: 4.5rem;
+    }
+    .hero-text-3 {
+        margin-left: 250px;
+    }
+    .hero-cta-btn {
+        margin-left: 250px;
+    }
+}
+
 @media (max-width: 700px) {
     header {
         padding: 0 10px;
@@ -434,8 +511,78 @@ nav ul li a:hover, nav ul li a.active {
         height: 70px;
         margin-bottom: 10px;
     }
+    .info-card.image-only-card {
+        position: fixed;
+        right: 15px;
+        width: 220px;
+        height: 200px;
+    }
+    .hero {
+        height: 70vh;
+        background-attachment: scroll;
+    }
+    .hero-content {
+        top: 30vh;
+        left: 20px;
+        width: 90%;
+    }
     .hero-content h1 {
         font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+    .hero-text-1 {
+        margin-left: 0;
+        font-size: 3rem;
+    }
+    .hero-text-2 {
+        margin-left: 80px;
+        font-size: 3.5rem;
+    }
+    .hero-text-3 {
+        margin-left: 80px;
+        font-size: 1rem;
+        max-width: 300px;
+    }
+    .hero-cta-btn {
+        margin-left: 80px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 60vh;
+    }
+    .hero-content {
+        top: 25vh;
+    }
+    .hero-text-1 {
+        font-size: 2.5rem;
+    }
+    .hero-text-2 {
+        margin-left: 40px;
+        font-size: 3rem;
+    }
+    .hero-text-3 {
+        margin-left: 40px;
+        max-width: 250px;
+    }
+    .hero-cta-btn {
+        margin-left: 40px;
+    }
+    .info-card.image-only-card {
+        position: fixed;
+        right: 10px;
+        width: 180px;
+        height: 170px;
+    }
+    .clip-icon {
+        top: -20px;
+        right: -15px;
+        width: 80px;
+        height: 80px;
     }
 }
 
@@ -1141,6 +1288,11 @@ nav ul li a:hover, nav ul li a.active {
     gap: 8px;
     font-size: 1rem;
 }
+
+.footer-nav a {
+    text-decoration: none;
+    color: inherit;
+}
 .footer-nav li {
     color: #f9f7f7;
     cursor: pointer;
@@ -1182,7 +1334,7 @@ nav ul li a:hover, nav ul li a.active {
 }
 .footer-office-img {
     width: 100%;
-    height: 400px;
+    height: 313px;
     max-width: 700px;
     border-radius: 18px;
     object-fit: cover;
