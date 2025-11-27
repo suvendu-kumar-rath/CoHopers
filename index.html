@@ -13,11 +13,11 @@
         </div>
         <nav>
             <ul>
-                <li><a href="index.html" class="active">HOME</a></li>
-                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="javascript:void(0)" onclick="window.location.href=config.FRONTEND_URL" class="active">HOME</a></li>
+                <li><a href="javascript:void(0)" onclick="window.location.href=config.ABOUT_URL">ABOUT US</a></li>
                 <li><a href="https://co-hopers-3xmq.vercel.app/services">SERVICES</a></li>
                 <li><a href="https://wa.me/918328830398?text=Hi%21%20I%27m%20interested%20to%20book%20a%20meeting%20room%20at%20your%20coworking%20space%20at%20Cohopers-" target="_blank">MEETING ROOM</a></li>
-                <li><a href="contactus.html">CONTACT US</a></li>
+                <li><a href="javascript:void(0)" onclick="window.location.href=config.CONTACT_URL">CONTACT US</a></li>
             </ul>
         </nav>
         <div class="profile-icon">
@@ -47,7 +47,7 @@
                     <span class="hero-text-2">Together</span>
                 </h1>
                 <p class="hero-text-3">An inspiring Co-working environment designed for freelancers and teams to achieve greatness</p>
-                <a href="contactus.html" class="hero-cta-btn">BOOK YOUR FREE TOUR</a>
+                <a href="javascript:void(0)" onclick="window.location.href=config.CONTACT_URL" class="hero-cta-btn">BOOK YOUR FREE TOUR</a>
                 <!-- <div class="carousel-dots">
                     <span class="dot active"></span>
                     <span class="dot"></span>
@@ -64,7 +64,7 @@
                     
                     <!-- <div class="explore-arrow">&#8599;</div> -->
                 </div>
-            </div>
+            </div>              
         </section>
         <div class="icon-row-container">
             <section class="icon-row">
@@ -378,11 +378,11 @@
                     <h2 class="footer-title">Let's Keep in Touch<br>with us!</h2>
                     <div class="footer-left-row">
                         <ul class="footer-nav">
-                            <a href="index.html"><li>Home</li></a>
-                            <a href="about.html"><li>About Us</li></a>
+                            <a href="javascript:void(0)" onclick="window.location.href=config.FRONTEND_URL"><li>Home</li></a>
+                            <a href="javascript:void(0)" onclick="window.location.href=config.ABOUT_URL"><li>About Us</li></a>
                             <a href="https://co-hopers-3xmq.vercel.app/services"><li>Services</li></a>
                             <a href="https://co-hopers-3xmq.vercel.app/meeting-room"><li>Meeting Rooms</li></a>
-                            <a href="contactus.html"><li>Contact us</li></a>
+                            <a href="javascript:void(0)" onclick="window.location.href=config.CONTACT_URL"><li>Contact us</li></a>
                         </ul>
                         <div class="footer-contact">
                             <p>Contact Us to explore the endless possibilities<br>of joining the vibrant<br>Cohopers coworking community.</p>
@@ -430,6 +430,7 @@
             </div>
         </footer>
     </main>
+    <script src="config.js"></script>
     <script src="script.js"></script>
 
     <!-- Gallery Modal Popup -->
